@@ -10,3 +10,15 @@ last 2 versions
 Firefox ESR
 not dead
 not IE 9-11 # For IE 9-11 support, remove 'not'.
+
+>= 1%
+last 1 major version
+not dead
+Chrome >= 45
+Firefox >= 38
+Edge >= 12
+Explorer >= 10
+iOS >= 9
+Safari >= 9
+Android >= 4.4
+Opera >= 30

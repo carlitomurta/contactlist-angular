@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="card-group">
+      <div
+        class="col-xs-12 col-sm-6 col-lg-3 mt-3"
+        *ngFor="let contact of contacts"
+      >
+        <div class="card">
+          <img
+            draggable="false"
+            class="card-img"
+            src="{{ contact.picture.large }}"
+            alt="User Photo"
+          />
+          <div class="card-body">
+            <h5 class="card-title">
+              {{ contact.name.first + ' ' + contact.name.last | titlecase }}
+            </h5>
+            <p class="card-text text-truncate">
+              {{ contact.email }}
+              <br />
+              {{ contact.phone }}
+            </p>
+            <a
+              class="btn btn-primary"
+              role="button"
+              (click)="openContact(contact)"
+              >Detalhes</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mx-auto my-5">
+      <a role="button" (click)="loadMore()">Carregar mais contatos...</a>
+    </div>
+  </div>
+</div>

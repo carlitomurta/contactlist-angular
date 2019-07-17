@@ -1,0 +1,53 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a [routerLink]="['/list']">Lista de Contatos</a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Detalhes</li>
+  </ol>
+</nav>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card">
+        <img
+          class="card-img-top h-50"
+          src="{{ contact.picture.large }}"
+          alt="Imagem de capa do card"
+        />
+        <div class="card-body">
+          <h5 class="card-title">
+            {{ contact.name.first + ' ' + contact.name.last | titlecase }}
+          </h5>
+          <p class="card-text"></p>
+          <p class="card-text">
+            <small class="text-muted">Atualizados 3 minutos atrás</small>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">
+            {{ contact.name.first + ' ' + contact.name.last | titlecase }}
+          </h5>
+          <p class="card-text">
+            Usuário: {{ contact.login.username }}<br />Email:
+            {{ contact.email }}
+          </p>
+          <p class="card-text">
+            Nasceu em: {{ contact.dob.date | date: 'dd/MM/yyyy' }}
+          </p>
+          <p class="card-text">Idade: {{ contact.dob.age }}</p>
+          <p class="card-text">
+            Endereço: {{ contact.location.state | titlecase }},
+            {{ contact.location.city | titlecase }},
+            {{ contact.location.street | titlecase }},
+            {{ contact.location.postcode }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
